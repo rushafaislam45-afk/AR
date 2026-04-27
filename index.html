@@ -1,0 +1,167 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Rusha from Anas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+        :root {
+            --sky-blue: #87CEEB;
+            --vibrant-orange: #FF8C00;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e0f2fe 0%, #fff7ed 100%);
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .cursive {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .heart-rain {
+            position: fixed;
+            top: -10%;
+            pointer-events: none;
+            z-index: 0;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(110vh); }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+
+        .photo-frame {
+            border: 8px solid white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-frame:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .btn-love {
+            background: linear-gradient(45deg, var(--vibrant-orange), #ff6b6b);
+            transition: all 0.3s ease;
+        }
+
+        .btn-love:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4">
+
+    <!-- Hearts Container -->
+    <div id="hearts-container"></div>
+
+    <!-- Header -->
+    <div class="text-center z-10 mb-10">
+        <h1 class="text-5xl md:text-6xl font-bold text-orange-500 cursive mb-2 floating">For Rusha</h1>
+        <p class="text-sky-500 font-semibold tracking-widest uppercase">With Love from Anas</p>
+    </div>
+
+    <!-- Photo Gallery -->
+    <div class="flex flex-wrap justify-center gap-8 mb-12 z-10">
+        <div class="photo-frame rounded-lg overflow-hidden w-64 md:w-80 -rotate-3 bg-white">
+            <img src="https://i.ibb.co.com/gFzsdTYQ/1777208007028.png" alt="Rusha and Anas" class="w-full h-80 object-cover" onerror="this.src='https://via.placeholder.com/400x500?text=Rusha+%26+Anas'">
+            <div class="p-4 text-center italic text-gray-600">Every moment counts</div>
+        </div>
+        
+        <div class="photo-frame rounded-lg overflow-hidden w-64 md:w-80 rotate-3 bg-white">
+            <img src="https://i.ibb.co.com/237wwsn7/IMG-20260426-183801.jpg" alt="Beautiful Moment" class="w-full h-80 object-cover" onerror="this.src='https://via.placeholder.com/400x500?text=Special+Memory'">
+            <div class="p-4 text-center italic text-gray-600">Pure Happiness</div>
+        </div>
+    </div>
+
+    <!-- Message Section -->
+    <div class="max-w-2xl w-full glass-card p-8 rounded-3xl text-center z-10 mb-10">
+        <h2 class="text-3xl font-bold text-sky-600 mb-4">Sarangheyo, Rusha! 🧡</h2>
+        <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+            Rusha, you make the world feel like a sky blue dream filled with orange sunshine. 
+            I wanted to create something special just for you. Every time I see you, 
+            my heart does a little dance.
+        </p>
+        <div class="text-2xl text-orange-500 font-bold mb-6 cursive">
+            "I love you more than words can say."
+        </div>
+        
+        <button onclick="showSurprise()" class="btn-love text-white px-8 py-3 rounded-full font-bold text-lg">
+            Click for a Surprise
+        </button>
+    </div>
+
+    <!-- Hidden Message -->
+    <div id="surprise-box" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-2xl p-8 max-w-sm w-full text-center shadow-2xl">
+            <span class="text-6xl mb-4 block">💌</span>
+            <h3 class="text-2xl font-bold text-orange-600 mb-2">My Promise</h3>
+            <p class="text-gray-600 mb-6">I'll always be the sky to your sun, Rusha. Forever and always.</p>
+            <p class="text-sky-500 font-bold text-xl cursive">Yours truly, Anas</p>
+            <button onclick="hideSurprise()" class="mt-6 text-gray-400 underline text-sm">Close</button>
+        </div>
+    </div>
+
+    <footer class="mt-auto text-gray-400 text-sm py-4">
+        Created with 🧡 for Rusha
+    </footer>
+
+    <script>
+        // Create falling hearts
+        function createHeart() {
+            const container = document.getElementById('hearts-container');
+            const heart = document.createElement('div');
+            const isOrange = Math.random() > 0.5;
+            
+            heart.classList.add('heart-rain');
+            heart.innerHTML = '❤️';
+            heart.style.color = isOrange ? '#FF8C00' : '#87CEEB';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            heart.style.opacity = Math.random();
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            
+            container.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 300);
+
+        function showSurprise() {
+            document.getElementById('surprise-box').classList.remove('hidden');
+        }
+
+        function hideSurprise() {
+            document.getElementById('surprise-box').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
+
+```
