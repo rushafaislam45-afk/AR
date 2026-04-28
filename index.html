@@ -1,13 +1,13 @@
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Rusha from Anas</title>
+    <title>রুশার জন্য আনাসের উপহার</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap');
 
         :root {
             --sky-blue: #87CEEB;
@@ -16,7 +16,7 @@
 
         body {
             background: linear-gradient(135deg, #e0f2fe 0%, #fff7ed 100%);
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Hind Siliguri', sans-serif;
             overflow-x: hidden;
         }
 
@@ -30,7 +30,7 @@
 
         @keyframes floating {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-15px); }
         }
 
         .heart-rain {
@@ -46,103 +46,111 @@
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 2px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
         .photo-frame {
-            border: 8px solid white;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            border: 10px solid white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .photo-frame:hover {
-            transform: rotate(0deg) scale(1.05);
+            transform: scale(1.05) rotate(0deg);
+            z-index: 20;
         }
 
         .btn-love {
-            background: linear-gradient(45deg, var(--vibrant-orange), #ff6b6b);
-            transition: all 0.3s ease;
+            background: linear-gradient(45deg, var(--vibrant-orange), #ff4500);
+            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
         }
 
-        .btn-love:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
+        .text-glow {
+            text-shadow: 0 0 10px rgba(135, 206, 235, 0.5);
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center py-10 px-4">
 
-    <!-- Hearts Container -->
+    <!-- Hearts Animation -->
     <div id="hearts-container"></div>
 
     <!-- Header -->
-    <div class="text-center z-10 mb-10">
-        <h1 class="text-5xl md:text-6xl font-bold text-orange-500 cursive mb-2 floating">For Rusha</h1>
-        <p class="text-sky-500 font-semibold tracking-widest uppercase">With Love from Anas</p>
+    <div class="text-center z-10 mb-12">
+        <h1 class="text-5xl md:text-7xl font-bold text-orange-500 mb-3 floating">প্রিয় রুশা</h1>
+        <div class="h-1 w-24 bg-sky-400 mx-auto rounded-full mb-3"></div>
+        <p class="text-sky-600 font-medium text-xl tracking-wide">আনাসের পক্ষ থেকে ছোট একটি উপহার</p>
     </div>
 
-    <!-- Photo Gallery -->
-    <div class="flex flex-wrap justify-center gap-8 mb-12 z-10">
-        <div class="photo-frame rounded-lg overflow-hidden w-64 md:w-80 -rotate-3 bg-white">
-            <img src="https://i.ibb.co.com/gFzsdTYQ/1777208007028.png" alt="Rusha and Anas" class="w-full h-80 object-cover" onerror="this.src='https://via.placeholder.com/400x500?text=Rusha+%26+Anas'">
-            <div class="p-4 text-center italic text-gray-600">Every moment counts</div>
+    <!-- Photo Section -->
+    <div class="flex flex-wrap justify-center gap-10 mb-16 z-10">
+        <div class="photo-frame rounded-xl overflow-hidden w-72 md:w-80 -rotate-2 bg-white">
+            <img src="https://i.ibb.co.com/gFzsdTYQ/1777208007028.png" alt="Rusha and Anas" class="w-full h-80 object-cover">
+            <div class="p-4 text-center font-semibold text-orange-500">আমাদের সুন্দর মুহূর্ত</div>
         </div>
         
-        <div class="photo-frame rounded-lg overflow-hidden w-64 md:w-80 rotate-3 bg-white">
-            <img src="https://i.ibb.co.com/237wwsn7/IMG-20260426-183801.jpg" alt="Beautiful Moment" class="w-full h-80 object-cover" onerror="this.src='https://via.placeholder.com/400x500?text=Special+Memory'">
-            <div class="p-4 text-center italic text-gray-600">Pure Happiness</div>
+        <div class="photo-frame rounded-xl overflow-hidden w-72 md:w-80 rotate-2 bg-white">
+            <img src="https://i.ibb.co.com/237wwsn7/IMG-20260426-183801.jpg" alt="Rusha" class="w-full h-80 object-cover">
+            <div class="p-4 text-center font-semibold text-sky-500">তোমার হাসিতেই আমার খুশি</div>
         </div>
     </div>
 
     <!-- Message Section -->
-    <div class="max-w-2xl w-full glass-card p-8 rounded-3xl text-center z-10 mb-10">
-        <h2 class="text-3xl font-bold text-sky-600 mb-4">Sarangheyo, Rusha! 🧡</h2>
-        <p class="text-gray-700 leading-relaxed mb-6 text-lg">
-            Rusha, you make the world feel like a sky blue dream filled with orange sunshine. 
-            I wanted to create something special just for you. Every time I see you, 
-            my heart does a little dance.
+    <div class="max-w-xl w-full glass-card p-10 rounded-[2rem] text-center z-10 relative overflow-hidden">
+        <div class="absolute -top-10 -right-10 w-32 h-32 bg-orange-100 rounded-full blur-3xl opacity-50"></div>
+        <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-sky-100 rounded-full blur-3xl opacity-50"></div>
+        
+        <h2 class="text-4xl font-bold text-sky-600 mb-6">রুশা,</h2>
+        
+        <p class="text-gray-700 text-xl leading-relaxed mb-8">
+            জানো রুশা, তোমার সাথে কাটানো প্রতিটা মুহূর্ত আমার কাছে একদম আকাশী নীলের মতো স্বচ্ছ আর কমলার আভার মতো উজ্জ্বল। 
+            তুমি আমার পৃথিবীটাকে রঙিন করে দিয়েছ।
         </p>
-        <div class="text-2xl text-orange-500 font-bold mb-6 cursive">
-            "I love you more than words can say."
+        
+        <div class="mb-10">
+            <span class="text-5xl md:text-6xl font-bold text-orange-500 cursive block mb-2">Sarangheyo</span>
+            <span class="text-xl text-sky-500 font-semibold tracking-widest">আমি তোমাকে অনেক ভালোবাসি</span>
         </div>
         
-        <button onclick="showSurprise()" class="btn-love text-white px-8 py-3 rounded-full font-bold text-lg">
-            Click for a Surprise
+        <button onclick="showModal()" class="btn-love text-white px-10 py-4 rounded-full font-bold text-xl hover:scale-105 transition-transform">
+            তোমার জন্য একটি বার্তা
         </button>
     </div>
 
-    <!-- Hidden Message -->
-    <div id="surprise-box" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
-        <div class="bg-white rounded-2xl p-8 max-w-sm w-full text-center shadow-2xl">
-            <span class="text-6xl mb-4 block">💌</span>
-            <h3 class="text-2xl font-bold text-orange-600 mb-2">My Promise</h3>
-            <p class="text-gray-600 mb-6">I'll always be the sky to your sun, Rusha. Forever and always.</p>
-            <p class="text-sky-500 font-bold text-xl cursive">Yours truly, Anas</p>
-            <button onclick="hideSurprise()" class="mt-6 text-gray-400 underline text-sm">Close</button>
+    <!-- Modal/Surprise -->
+    <div id="modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-sky-900/40 backdrop-blur-md p-6">
+        <div class="bg-white rounded-3xl p-10 max-w-sm w-full text-center shadow-2xl scale-in transform transition-all">
+            <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span class="text-4xl">🧡</span>
+            </div>
+            <h3 class="text-2xl font-bold text-orange-600 mb-4">আমার প্রতিশ্রুতি</h3>
+            <p class="text-gray-600 text-lg mb-8">আমি সবসময় তোমার পাশে থাকব, যেমন নীল আকাশে সূর্য থাকে। ভালো থেকো সবসময়।</p>
+            <p class="text-sky-500 font-bold text-2xl cursive">ইতি, আনাস</p>
+            <button onclick="hideModal()" class="mt-8 text-gray-400 hover:text-gray-600 transition-colors">বন্ধ করুন</button>
         </div>
     </div>
 
-    <footer class="mt-auto text-gray-400 text-sm py-4">
-        Created with 🧡 for Rusha
+    <footer class="mt-16 text-sky-400 font-medium py-6 text-center">
+        ভালোবাসার সাথে তৈরি করা — আনাস ❤️
     </footer>
 
     <script>
-        // Create falling hearts
+        // Heart Animation Generator
         function createHeart() {
             const container = document.getElementById('hearts-container');
             const heart = document.createElement('div');
-            const isOrange = Math.random() > 0.5;
+            const colors = ['#FF8C00', '#87CEEB', '#FF6B6B'];
             
             heart.classList.add('heart-rain');
             heart.innerHTML = '❤️';
-            heart.style.color = isOrange ? '#FF8C00' : '#87CEEB';
+            heart.style.color = colors[Math.floor(Math.random() * colors.length)];
             heart.style.left = Math.random() * 100 + 'vw';
             heart.style.animationDuration = Math.random() * 3 + 2 + 's';
-            heart.style.opacity = Math.random();
-            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            heart.style.opacity = Math.random() * 0.7 + 0.3;
+            heart.style.fontSize = Math.random() * 20 + 15 + 'px';
             
             container.appendChild(heart);
             
@@ -151,14 +159,18 @@
             }, 5000);
         }
 
-        setInterval(createHeart, 300);
+        setInterval(createHeart, 400);
 
-        function showSurprise() {
-            document.getElementById('surprise-box').classList.remove('hidden');
+        function showModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
         }
 
-        function hideSurprise() {
-            document.getElementById('surprise-box').classList.add('hidden');
+        function hideModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
         }
     </script>
 </body>
